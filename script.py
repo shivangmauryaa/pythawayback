@@ -8,12 +8,14 @@ def check_url_exists(url):
 
     try:
         response = requests.head(url)
-        if response.status_code == 200:
+        if response.status_code == 200 or response.status_code == 301:
             return True, "URL Exists,Process Has Been Started"
         else:
             return False, f"URL returned a status code of {response.status_code}"
     except requests.RequestException as e:
         return False, f"URL is not reachable"
+        
+        
 
 def fetch_and_save_urls(url, output_file):
     try:
@@ -44,5 +46,9 @@ if is_valid:
     url = f"https://web.archive.org/cdx/search/cdx?url=*.{link}/*&output=text&fl=original&collapse=urlkey"
     output_file = "urls.txt"
     fetch_and_save_urls(url, output_file)
+    file=open("urls.txt","r")
+    url=file.readlines()
+    print(f"Total Fetched URL {len(url)}")
+    
 else:
     print(colored(message, 'red'))
