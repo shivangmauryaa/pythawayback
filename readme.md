@@ -26,7 +26,7 @@ cd pythawayback
 ```
 - Run the script:
 ```bash
-python extract_urls.py
+python script.py
 ```
 - Follow the prompt to enter the domain:
 - Example: example.com (Do not add http:// or https://)
