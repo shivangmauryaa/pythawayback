@@ -21,8 +21,8 @@ pip install requests validators termcolor
 ## Usage
 - Clone the repository:
 ```bash
-git clone https://github.com/yourusername/url-endpoint-extractor.git
-cd url-endpoint-extractor
+git clone https://github.com/shivangmauryaa/pythawayback.git
+cd pythawayback
 ```
 - Run the script:
 ```bash
